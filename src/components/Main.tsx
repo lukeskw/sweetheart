@@ -77,8 +77,8 @@ const FallingHeart = memo(() => {
       }}
       initial={{ opacity: 0 }}
       animate={{
-        y: '120vh',
-        opacity: [0, 0.7, 0.7, 0],
+        y: '200vh',
+        opacity: [0, 1, 1, 0],
       }}
       transition={{
         duration,
@@ -192,7 +192,9 @@ PhotoCarousel.displayName = 'PhotoCarousel';
 
 const TimeCounter = memo(({ timeElapsed }: TimeCounterProps) => {
   const timeString = useMemo(() =>
-    `${timeElapsed.years} anos, ${timeElapsed.months} meses, ${timeElapsed.days} dias, ${timeElapsed.hours} horas, ${timeElapsed.minutes} minutos e ${timeElapsed.seconds} segundos`,
+    `${timeElapsed.years} anos, ${timeElapsed.months} ${timeElapsed.months === 1 ? 'mês' : 'meses'}, ${timeElapsed.days} ${timeElapsed.days === 1 ? 'dia' : 'dias'},
+   ${timeElapsed.hours} ${timeElapsed.hours === 1 ? 'hora' : 'horas'}, ${timeElapsed.minutes} ${timeElapsed.minutes === 1 ? 'minuto' : 'minutos'}
+    e ${timeElapsed.seconds} ${timeElapsed.seconds === 1 ? 'segundo' : 'segundos'}`,
     [timeElapsed.years, timeElapsed.months, timeElapsed.days, timeElapsed.hours, timeElapsed.minutes, timeElapsed.seconds]
   );
 
@@ -281,7 +283,7 @@ const EntranceScreen = memo(({ onStart }: EntranceScreenProps) => {
       }}
       className="flex items-center justify-center min-h-screen relative"
     >
-      <HeartRain count={25} />
+      <HeartRain count={20} />
 
       <motion.button
         onClick={onStart}
@@ -338,7 +340,7 @@ export default function RomanticMemorial() {
   const [showMainContent, setShowMainContent] = useState<boolean>(false);
   const [animationComplete, setAnimationComplete] = useState<boolean>(false);
 
-  const relationshipStart = useMemo(() => new Date('2017-05-13'), []);
+  const relationshipStart = useMemo(() => new Date('2017-04-17'), []);
   const timeElapsed = useTimeCounter(relationshipStart);
 
   const photos: Photo[] = useMemo(() => [
@@ -365,17 +367,17 @@ export default function RomanticMemorial() {
     {
       id: 5,
       url: "5.jpg",
-      alt: "Praia"
+      alt: "Ano novo"
     },
     {
       id: 6,
       url: "6.jpg",
-      alt: "Praia"
+      alt: "Show"
     },
     {
       id: 7,
       url: "7.jpg",
-      alt: "Praia"
+      alt: "Pedido"
     },
 
   ], []);
@@ -411,7 +413,7 @@ export default function RomanticMemorial() {
             className="min-h-screen relative"
           >
             {animationComplete && (
-              <HeartRain count={5} />
+              <HeartRain count={10} />
             )}
 
             <div className="relative z-10 max-w-md mx-auto pt-8 pb-2">
