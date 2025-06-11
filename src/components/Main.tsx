@@ -1,6 +1,6 @@
 import { useState, useEffect, memo, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from './ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 
 interface TimeElapsed {
   years: number;
