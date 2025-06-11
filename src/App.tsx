@@ -1,8 +1,8 @@
-import Main from "./components/Main"
+import RomanticMemorial from "./components/RomanticMemorial"
 
 function App() {
   return (
-    <Main />
+    <RomanticMemorial />
   )
 }
 
