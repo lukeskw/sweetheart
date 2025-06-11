@@ -344,37 +344,37 @@ export default function RomanticMemorial() {
   const photos: Photo[] = useMemo(() => [
     {
       id: 1,
-      url: "/1.jpg",
+      url: "1.jpg",
       alt: "RiR"
     },
     {
       id: 2,
-      url: "/2.jpg",
+      url: "2.jpg",
       alt: "Ponte"
     },
     {
       id: 3,
-      url: "/3.jpg",
+      url: "3.jpg",
       alt: "Praia"
     },
     {
       id: 4,
-      url: "/4.jpg",
+      url: "4.jpg",
       alt: "Praia2"
     },
     {
       id: 5,
-      url: "/5.jpg",
+      url: "5.jpg",
       alt: "Praia"
     },
     {
       id: 6,
-      url: "/6.jpg",
+      url: "6.jpg",
       alt: "Praia"
     },
     {
       id: 7,
-      url: "/7.jpg",
+      url: "7.jpg",
       alt: "Praia"
     },
 
